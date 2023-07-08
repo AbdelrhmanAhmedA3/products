@@ -20,7 +20,7 @@
               </mat-form-field>
               <!-- Email -->
               <!-- Password -->
-              <mat-form-field>
+              <mat-form-field class="my-2">
                 <mat-label>password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                 <mat-error *ngIf="loginForm.controls['password'].invalid">
