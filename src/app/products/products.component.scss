@@ -1,0 +1,55 @@
+.textColor{
+  color: #495057;
+  cursor: pointer;
+}
+.letter-spacing{
+  letter-spacing: 1.9px;
+}
+.fs-new{
+  font-size: .9em;
+}
+.titleColor{
+  color: #3B6A9A;
+}
+.h-img{
+  height: 200px;
+}
+.text-dic,.text-price{
+  color: #28636d;
+}
+.text-body-stock{
+  color: #8b4444;
+}
+.newStyle{
+  background: #fae3df;
+  color: #ff7b71;
+  width: 36px;
+    height: 36px;
+}
+.card:last-child{
+  border: 0 !important;
+}
+::ng-deep{
+  .mat-mdc-form-field-subscript-wrapper{
+    height: 0;
+  }
+
+}
+@media (max-width: 575.98px) {
+  mat-form-field{
+    width: 100%;
+  }
+
+ }
+ @media (max-width: 767.98px) {
+  .h-xs{
+    max-height: 200px;
+  }
+  .fs-xs{
+    & p:first-child{
+      font-size: .6rem;
+    }
+    text-align: center;
+    font-size: .4rem;
+  }
+  }

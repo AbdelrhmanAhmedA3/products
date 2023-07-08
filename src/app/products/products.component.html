@@ -1,0 +1,85 @@
+<section>
+    <div class="container text-center my-3">
+      <div class="row ">
+        <div class="col-12 col-sm p-0 d-flex justify-content-md-center align-items-center ">
+          <h1 class="m-0 textColor letter-spacing">Products</h1>
+        </div>
+        <div class="col-12 col-sm-6 my-3 my-sm-2 my-md-0 w-s d-flex p-0"> <!--@media-->
+          <mat-form-field class="example-form-field ">
+            <mat-label>Search</mat-label>
+            <input matInput type="text" [(ngModel)]="searchValue"(input)="searchingInArray()"> <!--  (input)="searchingInArray()"-->
+            <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';searchingInArray()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4 p-0 p-md-1 col-12 gap-3 d-flex justify-content-md-center align-items-center">
+          <button  type="button" class="btn btn-light px-4 shadow-sm fs-new">Welcome, Rebbecca</button>
+          <div title="LogOut" (click)="logOut()">
+            <button class="rounded newStyle shadow-none " mat-fab  aria-label="Example icon button with a delete icon">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+<section>
+  <div class="container shadow bg-white py-4 px-5 lastborder">
+    <div class="card py-4 border-0 rounded-0 border-bottom mb-3"  *ngFor="let product of productsList; let productIndex = index">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <!-- <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img [src]="product.thumbnail"
+                 class="d-block img-fluid h-xs rounded  w-100"
+                 style=" height: 200px;"
+                alt="...">
+              </div>
+
+            </div>
+            <button (click)="previousImage(productIndex, product.images.length)" class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <mat-icon class="text-danger fs-2">navigate_before</mat-icon>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button (click)="nextImage(productIndex, product.images.length)" class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <mat-icon class="text-danger fs-2">navigate_next</mat-icon>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
+          <img [src]="product.thumbnail"
+          class="d-block img-fluid h-xs rounded  w-100 h-img"
+         alt="...">
+        </div>
+        <div class="col-md-8 d-flex">
+          <div class="card-body ps-0 ps-md-3">
+            <div class="row">
+              <div class="col-9">
+                <h5 class="card-title mb-0 titleColor fw-bold fs-5">{{product.title}} </h5>
+                <p class="card-text mb-4"><small class=" text-body-tertiary">{{product.brand}} / {{product.category}}</small></p>
+              </div>
+              <div class="col-3 d-flex justify-content-center justify-content-lg-start">
+                <button (click)="deleteProduct(productIndex)" class="rounded newStyle shadow-none " mat-fab  aria-label="Example icon button with a delete icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-9">
+                <p class="card-text text-body-secondary m-0">{{product.description}}</p>
+                <p class="card-text"><small class="text-body-stock">{{product.stock}} <strong>in stock</strong></small></p>
+              </div>
+              <div class="col-3 border-start fs-xs">
+                <p class="card-text m-0  "><small class="text-dic">{{(product.discountPercentage  | number: '1.0-0') + '%'    }} </small></p>
+                <p class="card-text fs-4 "><small class="text-price"><strong>{{product.price + ' $'}}</strong></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
