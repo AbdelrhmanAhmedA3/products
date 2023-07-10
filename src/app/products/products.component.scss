@@ -4,7 +4,7 @@
   letter-spacing: 1.9px;
 }
 .fs-new{
-  font-size: .9em;
+  font-size: .8em;
 }
 .titleColor{
   color: #3B6A9A;
@@ -33,12 +33,13 @@
   }
 
 }
-@media (max-width: 575.98px) {
-  mat-form-field{
-    width: 100%;
+@media (max-width: 576px) {
+  .border-sm-none{
+    border: none !important;
   }
 
  }
+
  @media (max-width: 767.98px) {
   .h-xs{
     max-height: 200px;
@@ -51,3 +52,11 @@
     font-size: .4rem;
   }
   }
+
+  @media (min-width: 768px) {
+    mat-form-field {
+      width: 50% !important;
+    }
+
+
+   }

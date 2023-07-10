@@ -5,15 +5,15 @@
           <h1 class="m-0 textColor letter-spacing">Products</h1>
         </div>
         <div class="col-12 col-sm-6 my-3 my-sm-2 my-md-0 w-s d-flex p-0"> <!--@media-->
-          <mat-form-field class="example-form-field ">
-            <mat-label>Search</mat-label>
-            <input matInput type="text" [(ngModel)]="searchValue"(input)="searchingInArray()"> <!--  (input)="searchingInArray()"-->
+          <mat-form-field class="example-form-field w-100 ms-md-3 ms-lg-0">
+            <mat-label>Live Search ...</mat-label>
+            <input class="" matInput type="text" [(ngModel)]="searchValue"(input)="searchingInArray()"> <!--  (input)="searchingInArray()"-->
             <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue='';searchingInArray()">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
         </div>
-        <div class="col-md-4 p-0 p-md-1 col-12 gap-3 d-flex justify-content-md-center align-items-center">
+        <div class="col-md-4 p-0 p-md-1 col-12 gap-3 d-flex justify-content-between justify-content-md-center align-items-center">
           <button  type="button" class="btn btn-light px-4 shadow-sm fs-new">Welcome, Rebbecca</button>
           <div title="LogOut" (click)="logOut()">
             <button class="rounded newStyle shadow-none " mat-fab  aria-label="Example icon button with a delete icon">
@@ -55,26 +55,35 @@
          alt="...">
         </div>
         <div class="col-md-8 d-flex">
-          <div class="card-body ps-0 ps-md-3">
-            <div class="row">
-              <div class="col-9">
+          <div class="card-body gap-3 row  ps-0 ps-md-3 d-sm-flex">
+            <div class="row col-12 col-sm-8">
+              <div class="col-10">
                 <h5 class="card-title mb-0 titleColor fw-bold fs-5">{{product.title}} </h5>
                 <p class="card-text mb-4"><small class=" text-body-tertiary">{{product.brand}} / {{product.category}}</small></p>
               </div>
-              <div class="col-3 d-flex justify-content-center justify-content-lg-start">
+              <div class="col-10">
+                <p class="card-text text-body-secondary m-0">{{product.description}}</p>
+                <p class="card-text"><small class="text-body-stock">{{product.stock}} <strong>in stock</strong></small></p>
+              </div>
+              <!-- <div class="col-3 d-flex justify-content-center justify-content-lg-start">
+                <button (click)="deleteProduct(productIndex)" class="rounded newStyle shadow-none " mat-fab  aria-label="Example icon button with a delete icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div> -->
+            </div>
+            <div class="row col-sm-4 col-12 ">
+              <div class="col-12 d-flex justify-content-sm-center mb-sm-4 order-2 order-sm-0">
                 <button (click)="deleteProduct(productIndex)" class="rounded newStyle shadow-none " mat-fab  aria-label="Example icon button with a delete icon">
                   <mat-icon>delete</mat-icon>
                 </button>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-9">
+              <!-- <div class="col-9">
                 <p class="card-text text-body-secondary m-0">{{product.description}}</p>
                 <p class="card-text"><small class="text-body-stock">{{product.stock}} <strong>in stock</strong></small></p>
-              </div>
-              <div class="col-3 border-start fs-xs">
-                <p class="card-text m-0  "><small class="text-dic">{{(product.discountPercentage  | number: '1.0-0') + '%'    }} </small></p>
-                <p class="card-text fs-4 "><small class="text-dic"><strong>{{product.price + ' $'}}</strong></small></p>
+              </div> -->
+              <div class="col-12 border-sm-start border-start border-sm-none mb-5 mb-sm-0 text-start text-sm-center order-1 fs-xs">
+                <p class="card-text m-0  "><small class="text-dic">{{(product.discountPercentage  | number: '1.0-0') + '%OFF'}} </small></p>
+                <p class="card-text fs-6 "><small class="text-dic"><strong>{{product.price + ' $'}}</strong></small></p>
               </div>
             </div>
           </div>
