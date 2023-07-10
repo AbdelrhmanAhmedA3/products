@@ -1,9 +1,12 @@
-form .colorButton{
-  background-color: #b1494692;
+form {
+  .colorButton{
+    background-color: #b1494692;
+  }
+  .bgwarning{
+    background-color: #b14946;
+  }
 }
-form .bgwarning{
-  background-color: #b14946;
-}
+
 .sizing{
   height: 350px;
   width: 500px;
